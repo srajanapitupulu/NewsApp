@@ -73,7 +73,7 @@ fun NewsFeedApp() {
                     TopAppBar(
                         title = { Text("News App") },
                         navigationIcon = {
-                            if (currentDestination != "news_feed") {
+                            if (currentDestination == "details") {
                                 IconButton(onClick = { navController.navigateUp() }) {
                                     Icon(
                                         imageVector = Icons.Default.ArrowBack,
@@ -113,7 +113,7 @@ fun NewsFeedApp() {
                                         (uiState as NewsUIState.Success).news,
                                         Modifier.padding(innerPadding)
                                     ) { selectedArticle ->
-                                        navController.navigate("details/${selectedArticle.title}")
+                                        navController.navigate("details")
                                         viewModel.setSelectedArticle(selectedArticle)
                                     }
                                 } else {
@@ -121,7 +121,7 @@ fun NewsFeedApp() {
                                         (uiState as NewsUIState.Success).news,
                                         Modifier.padding(innerPadding)
                                     ) { selectedArticle ->
-                                        navController.navigate("details/${selectedArticle.title}")
+                                        navController.navigate("details")
                                         viewModel.setSelectedArticle(selectedArticle)
                                     }
                                 }
@@ -133,10 +133,10 @@ fun NewsFeedApp() {
                         }
                     }
 
-                    composable("details/{title}") {
+                    composable("details") {
                         val selected = viewModel.selectedArticle
                         selected?.let {
-                            NewsDetailScreen(it, navController, innerPadding)
+                            NewsDetailScreen(it, innerPadding)
                         }
                     }
                 }
