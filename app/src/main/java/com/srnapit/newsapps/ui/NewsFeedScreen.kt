@@ -1,6 +1,5 @@
 package com.srnapit.newsapps.ui
 
-import android.widget.GridView
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
@@ -16,7 +15,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.srnapit.newsapps.network.Article
+import com.srnapit.newsapps.data.model.Article
+import com.srnapit.newsapps.ui.component.NewsItemCard
 
 @Composable
 fun LoadingView() {

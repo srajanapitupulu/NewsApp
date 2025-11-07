@@ -2,8 +2,8 @@ package com.srnapit.newsapps.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.srnapit.newsapps.data.NewsRepository
-import com.srnapit.newsapps.network.Article
+import com.srnapit.newsapps.data.repository.NewsRepository
+import com.srnapit.newsapps.data.model.Article
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

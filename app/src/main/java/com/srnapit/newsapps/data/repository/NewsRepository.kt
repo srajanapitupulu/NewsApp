@@ -1,6 +1,6 @@
-package com.srnapit.newsapps.data
+package com.srnapit.newsapps.data.repository
 
-import com.srnapit.newsapps.network.NewsApiService
+import com.srnapit.newsapps.data.network.NewsApiService
 import javax.inject.Inject
 
 class NewsRepository@Inject constructor(

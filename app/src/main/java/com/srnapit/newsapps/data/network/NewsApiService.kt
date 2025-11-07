@@ -1,7 +1,7 @@
-package com.srnapit.newsapps.network
+package com.srnapit.newsapps.data.network
 
+import com.srnapit.newsapps.data.model.NewsResponse
 import retrofit2.http.GET
-import retrofit2.http.Header
 import retrofit2.http.Query
 
 interface NewsApiService {

@@ -1,8 +1,9 @@
-package com.srnapit.newsapps.network
+package com.srnapit.newsapps.di
 
 import com.squareup.moshi.Moshi
-import com.srnapit.newsapps.BuildConfig
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import com.srnapit.newsapps.BuildConfig
+import com.srnapit.newsapps.data.network.NewsApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

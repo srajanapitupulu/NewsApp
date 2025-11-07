@@ -1,12 +1,4 @@
-package com.srnapit.newsapps.network
-
-import java.util.Date
-
-data class NewsResponse(
-    val status: String,
-    val totalResults: Int,
-    val articles: List<Article>
-)
+package com.srnapit.newsapps.data.model
 
 data class Article(
     val title: String?,
