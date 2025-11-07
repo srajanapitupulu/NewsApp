@@ -19,12 +19,12 @@ class NewsViewModel @Inject constructor(
     val uiState: StateFlow<NewsUIState> = _uiState
 
 
-    fun loadNewsHeadlines(apiKey: String) {
+    fun loadNewsHeadlines() {
         viewModelScope.launch {
             _uiState.value = NewsUIState.Loading
 
             try {
-                val response = newsRepository.fetchTopHeadlines(apiKey)
+                val response = newsRepository.fetchTopHeadlines()
 
                 if (response.status == "ok") {
                     _uiState.value = NewsUIState.Success(response.articles)

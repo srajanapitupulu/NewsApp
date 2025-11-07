@@ -19,7 +19,14 @@ android {
         versionCode = 1
         versionName = "1.0"
 
+        buildConfigField("String", "NEWS_API_KEY", "\"6d8e36cf106f4649b41672739cee459c\"")
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        compose = true
+        buildConfig = true
     }
 
     buildTypes {
@@ -54,6 +61,7 @@ dependencies {
     implementation(libs.androidx.compose.material3)
     implementation("androidx.compose.foundation:foundation")
     implementation("androidx.compose.material3:material3-window-size-class")
+    implementation("io.coil-kt:coil-compose:2.7.0")
 
     // Hilt
     implementation(libs.hilt.android)
