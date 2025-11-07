@@ -2,8 +2,8 @@ package com.srnapit.newsapps.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.savedstate.compose.serialization.serializers.MutableStateSerializer
 import com.srnapit.newsapps.data.NewsRepository
+import com.srnapit.newsapps.network.Article
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -16,8 +16,9 @@ class NewsViewModel @Inject constructor(
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow<NewsUIState>(NewsUIState.Loading)
+    private val _selectedArticle = MutableStateFlow<Article?>(null)
     val uiState: StateFlow<NewsUIState> = _uiState
-
+    val selectedArticle: Article? get() = _selectedArticle.value
 
     fun loadNewsHeadlines() {
         viewModelScope.launch {
@@ -36,5 +37,9 @@ class NewsViewModel @Inject constructor(
                 _uiState.value = NewsUIState.Error(e.message ?: "Unknown error")
             }
         }
+    }
+
+    fun setSelectedArticle(article: Article) {
+        _selectedArticle.value = article
     }
 }
